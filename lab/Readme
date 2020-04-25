@@ -1,0 +1,20 @@
+La soluzione è nella cartella s2i-do288-go del repository
+
+SETUP 
+git clone https://github.com/redhat-do288/go-hello.git
+TASK
+	creare builder image per go da centos:7
+		nome builder image->s2i-do288-go
+		name immagine di output s2i-go-app
+	local test
+		name container test-go
+		8080 contaienr port -> localhost port 8080
+		test curl http://localhost:8080/user/1
+	deploy su openshift
+		project->custom-s2i
+		name->greet
+		route->greet.hostname
+	modificare run aggiungendo --lang es
+
+Note:
+yum install golang non funziona. Usare https://www.vultr.com/docs/how-to-install-golang-1-8-3-on-centos-7-ubuntu-16-04-lts-and-debian-9-stretch
