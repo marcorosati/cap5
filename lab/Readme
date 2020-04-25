@@ -14,7 +14,8 @@ TASK
 		project->custom-s2i
 		name->greet
 		route->greet.hostname
-	modificare run aggiungendo --lang es
+	modificare run aggiungendo --lang es ma senza modificare la builder image
 
 Note:
 yum install golang non funziona. Usare https://www.vultr.com/docs/how-to-install-golang-1-8-3-on-centos-7-ubuntu-16-04-lts-and-debian-9-stretch
+Per installare go il comando ADD non esegue l'estrazione se gli viene passato l'url (da verificare)

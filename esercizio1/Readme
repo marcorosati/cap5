@@ -1,1 +1,25 @@
-docker pull registry.access.redhat.com/rhscl/httpd-24-rhel7
+SETUP
+	docker pull registry.access.redhat.com/rhscl/httpd-24-rhel7
+	creare is httpd-24-rhel7
+	git clone https://github.com/marcorosati/s2i-scripts.git
+	git reset b882f0640737181855f213c06c3d549bc0a5c6d1
+	git push -f
+TASK
+	modificare assemble in s2i-scripts
+		copiare tutti i file .html
+		scrivere dentro file info.html 
+				 DATE=date "+%b %d, %Y @ %H:%M %p"
+				"Page built on $DATE"	
+				"Http server version $HTTPD_VERSION"
+	modificare run.sh (livello di log debug)
+	Deploy app (customizzando s2i)
+		nome progetto->s2i-scripts
+		nome app->hello
+		is->httpd-24-rhel7
+	Verificare log build
+	expose route
+	test info.html
+	test index.html
+		
+	
+	

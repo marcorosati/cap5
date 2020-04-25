@@ -1,1 +1,10 @@
+SETUP TODO
+	git clone https://github.com/redhat-do288/html-helloworld.git
 copiare nella cartella di s2i Dockerfile, cartella s2i,  cartella root
+
+TASK
+	build una builder image Apache httpd con s2i
+		builder image name s2i-do288-httpd
+	test localmente
+	deploy su openshift
+	
